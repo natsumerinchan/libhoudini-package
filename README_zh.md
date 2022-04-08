@@ -19,7 +19,7 @@
 #### 4、安装方法
  
 1.  [给android x86安装gearlock](https://wiki.supreme-gamers.com/gearlock/user-guide/installation-and-updating/)
-2.  [下载并安装本模块](https://github.com/natsumerinchan/libhoudini-for-x86_64-android11/releases)
+2.  [下载并安装本拓展](https://github.com/natsumerinchan/libhoudini-for-x86_64-android11/releases)
 3.  进入设置打开arm兼容开关，然后重启
 4.  Enjoy！
 
