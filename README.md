@@ -4,7 +4,7 @@
 [简体中文](https://github.com/natsumerinchan/libhoudini-for-x86_64-android11/blob/master/README_zh_CHS.md)
 
 #### 1、Description
-A Gearlock package for install libhoudini translation on x86_64 Android11,libhoudini extracted from Windows Subsystem for Android™️ (WSA)
+A Gearlock package for install libhoudini translation on x86_64 Android11,libhoudini extracted from Windows Subsystem for Android™️ (WSA).
 
 #### 2、Support Architecture
 Only support x86_64 Android11 and higher versions.
@@ -21,7 +21,7 @@ Only support x86_64 Android11 and higher versions.
 
 #### 4、Instructions
 
-1. [Install gearlock on Android x86 ](https://wiki.supreme-gamers.com/gearlock/user-guide/installation-and-updating/)
+1. [Install gearlock on Android x86 ](https://wiki.supreme-gamers.com/gearlock/user-guide/installation-and-updating/).
 2. [Download and install this package](https://github.com/natsumerinchan/libhoudini-for-x86_64-android11/releases).
 3. Go to Settings and turn on the arm compatibility switch,reboot.
 4. Enjoy！
