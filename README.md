@@ -20,7 +20,7 @@ Only support x86_64 Android11 and higher versions.
 #### 4、Instructions
 
 1. [Install gearlock on Android x86 ](https://wiki.supreme-gamers.com/gearlock/user-guide/installation-and-updating/)
-2. [Download and install this package](https://gitee.com/natsumerin/libhoudini-for-x86_64-android11/releases).
+2. [Download and install this package](https://github.com/natsumerinchan/libhoudini-for-x86_64-android11/releases).
 3. Go to Settings and turn on the arm compatibility switch,reboot.
 4. Enjoy！
 
