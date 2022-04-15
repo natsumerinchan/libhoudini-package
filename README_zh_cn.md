@@ -49,4 +49,3 @@
 - /system/vendor/etc/binfmt_misc/arm64_dyn
 
 </details>
-
