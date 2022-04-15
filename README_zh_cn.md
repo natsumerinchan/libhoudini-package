@@ -5,7 +5,7 @@
 #### 1、介绍
 给Android11 x86_64 安装libhoudini arm兼容层，提取自Windows Subsystem for Android™️ (WSA)
 
-#### 2、支持架构
+#### 2、支持平台
 仅支持x86_64 Android11
 
 #### 3、测试环境
