@@ -7,7 +7,7 @@
 A Gearlock package for install libhoudini translation on x86_64 Android11,libhoudini extracted from Windows Subsystem for Android™️ (WSA).
 
 #### 2、Support Architecture
-Only support x86_64 Android11 and higher versions.
+Only support x86_64 Android11.
 
 #### 3、Environment
 
