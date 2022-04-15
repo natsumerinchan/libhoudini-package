@@ -22,8 +22,15 @@ fi
 ! touch -c "$SYSTEM_DIR/lib" >/dev/null 2>&1 && geco "[!!!] $SYSTEM_DIR is not writable, did you ${PINK}SuperCharge${RC} it yet ?" && exit 101
 
 # Show sdk version and device architecture
+
+if test -e "$SYSTEM_DIR/lib64/libui.so"; then
+           SYSTEM_ARCH=x86_64
+else
+           SYSTEM_ARCH=x86
+fi
+
 geco "-SDK: $SDK"
-geco "-ARCH: $HOST_ARCH"
+geco "-ARCH: $SYSTEM_ARCH"
 
 # Ensure Android version
 if test "$SDK" -lt "30"; then
@@ -31,7 +38,7 @@ if test "$SDK" -lt "30"; then
 fi
 
 # Ensure Device Architecture
-if test "$HOST_ARCH" != "x86_64"; then
+if test "$SYSTEM_ARCH" != "x86_64"; then
 	geco "\n[!!!] This package only support x86_64 devices!" && exit 101
 fi
 
