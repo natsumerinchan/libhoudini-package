@@ -24,22 +24,22 @@ fi
 # Show sdk version and device architecture
 
 if test -e "$SYSTEM_DIR/lib64/libui.so"; then
-           SYSTEM_ARCH=x86_64
+	SYSTEM_ARCH=x86_64
 else
-           SYSTEM_ARCH=x86
+	SYSTEM_ARCH=x86
 fi
 
 geco "-SDK: $SDK"
-geco "-ARCH: $SYSTEM_ARCH"
+geco "-Platform: $SYSTEM_ARCH"
 
 # Ensure Android version
-if test "$SDK" -lt "30"; then
-	geco "\n[!!!] This package only support Android11 and higher versions." && exit 101
+if test "$SDK" != "30"; then
+	geco "\n[!!!] This package only support Android11." && exit 101
 fi
 
 # Ensure Device Architecture
 if test "$SYSTEM_ARCH" != "x86_64"; then
-	geco "\n[!!!] This package only support x86_64 devices!" && exit 101
+	geco "\n[!!!] Unsupport Platform: -$SYSTEM_ARCH ;This package only support x86_64 devices!" && exit 101
 fi
 
 # Delete the original libhoudini
