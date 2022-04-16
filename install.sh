@@ -23,7 +23,7 @@ fi
 
 # Show sdk version and device architecture
 
-if test -e "$SYSTEM_DIR/lib64/libui.so"; then
+if test -d "$SYSTEM_DIR/lib64/hw"; then
 	SYSTEM_ARCH=x86_64
 else
 	SYSTEM_ARCH=x86
