@@ -34,7 +34,7 @@ geco "-Platform: $SYSTEM_ARCH"
 
 # Ensure Android version
 if test "$SDK" != "30"; then
-	geco "\n[!!!] This package only support Android11." && exit 101
+	geco "\n[!!!] This package only supports Android11." && exit 101
 fi
 
 # Ensure Device Architecture
