@@ -39,7 +39,7 @@ fi
 
 # Ensure Device Architecture
 if test "$SYSTEM_ARCH" != "x86_64"; then
-	geco "\n[!!!] Unsupport Platform: -$SYSTEM_ARCH ;This package only support x86_64 devices!" && exit 101
+	geco "\n[!!!] Unsupport Platform: -$SYSTEM_ARCH ;This package only supports x86_64 devices!" && exit 101
 fi
 
 # Delete the original libhoudini
