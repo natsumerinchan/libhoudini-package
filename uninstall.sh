@@ -15,15 +15,3 @@
 # full path for the locally prepared uninstallation script.
 
 geco "\n++ Deleting the Arm translation layer"
-
-nout rm -rf "$SYSTEM_DIR/bin/houdini"
-nout rm -rf "$SYSTEM_DIR/bin/arm/linker"
-nout rm -rf "$SYSTEM_DIR/lib/libhoudini.so"
-nout rm -rf "$SYSTEM_DIR/lib/arm/*"
-nout rm -rf "$SYSTEM_DIR/vendor/lib/libhoudini.so"
-nout rm -rf "$SYSTEM_DIR/bin/houdini64"
-nout rm -rf "$SYSTEM_DIR/bin/arm64/linker64"
-nout rm -rf "$SYSTEM_DIR/lib64/libhoudini.so"
-nout rm -rf "$SYSTEM_DIR/lib64/arm64/*"
-nout rm -rf "$SYSTEM_DIR/vendor/lib64/libhoudini.so"
-nout rm -rf "$SYSTEM_DIR/vendor/etc/binfmt_misc/*"
