@@ -42,7 +42,7 @@ if test "$SYSTEM_ARCH" != "x86_64"; then
 	geco "\n[!!!] Unsupport Platform: -$SYSTEM_ARCH ;This package only supports x86_64 devices!" && exit 101
 fi
 
-# Before install
+# Before installation
 read -rn1 -p "$(geco "++++ Do you sure you want to install this package? ? [y/${GREEN}N${RC}]") " c
 test "${c,,}" != 'y' && exit 101 #(exit-code ref: https://wiki.supreme-gamers.com/gearlock/developer-guide/#install-sh-exit-code)
 
