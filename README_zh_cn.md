@@ -1,6 +1,6 @@
 # libhoudini-for-x86_64-android11
 
-[English](https://github.com/natsumerinchan/libhoudini-for-x86_64-android11)
+ **简体中文**  [ **English** ](https://github.com/natsumerinchan/libhoudini-for-x86_64-android11)
 
 #### 1、介绍
 给Android11 x86_64 安装libhoudini arm兼容层，提取自Windows Subsystem for Android™️ (WSA)
