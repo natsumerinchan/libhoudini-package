@@ -61,7 +61,7 @@ nout rm -rf "$SYSTEM_DIR/lib64/libhoudini.so"
 nout rm -rf "$SYSTEM_DIR/lib64/arm64/*"
 nout rm -rf "$SYSTEM_DIR/vendor/lib64/libhoudini.so"
 
-# Delete libndk
+# Delete libndk translation
 nout rm -rf "$SYSTEM_DIR/system/etc/binfmt_misc/*"
 # 32 bit
 nout rm -rf "$SYSTEM_DIR/bin/ndk_translation_program_runner_binfmt_misc"
