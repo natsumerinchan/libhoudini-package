@@ -51,3 +51,16 @@ Only supports x86_64 Android11.
 - /system/vendor/etc/binfmt_misc/arm64_dyn
 
 </details>
+
+#### 6、Effect
+1. AIDA64
+![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/AIDA64.png)
+
+2. Desktop
+![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/Desktop.png)
+
+3. PCR
+![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/PCR.png)
+
+4. Wallpaper Engine
+![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/Wallpaper_Engine.png)
