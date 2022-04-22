@@ -54,7 +54,7 @@
 1. AIDA64
 ![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/AIDA64.png)
 
-2. Desktop
+2. 桌面
 ![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/Desktop.png)
 
 3. 公主连结R
