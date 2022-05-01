@@ -66,4 +66,4 @@ Only supports x86_64 Android11.
 ![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/Wallpaper_Engine.png)
 
 #### 7、Unsupported applications
-1.Blue Archive (Can get to the title page, but it crashes on loading.)
+1.Blue Archive (Can open the title page, but it crashes on loading.)
