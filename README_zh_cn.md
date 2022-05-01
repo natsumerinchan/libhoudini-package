@@ -62,3 +62,6 @@
 
 4. Wallpaper Engine
 ![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/Wallpaper_Engine.png)
+
+#### 7、不支持的应用
+1.Blue Archive蔚蓝档案 (能进入标题页面但加载时会闪退)
