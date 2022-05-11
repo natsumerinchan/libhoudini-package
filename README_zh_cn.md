@@ -10,7 +10,7 @@
 
 #### 3、测试环境
 
-- Computer：联想拯救者Y7000 2020 (AV86)
+- Computer：联想拯救者Y7000 2020 (82AV)
 - Cpu:Intel core i5-10200H
 - Gpu:
   - 核显：Intel(R) UHD Graphics 630
