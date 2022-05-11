@@ -11,7 +11,7 @@ Only supports x86_64 Android11.
 
 #### 3、Environment
 
-- Computer：Lenovo Legion Y7000 2020 (AV86)
+- Computer：Lenovo Legion Y7000 2020 (82AV)
 - Cpu:Intel core i5-10200H
 - Gpu:
   - Integrated Graphics：Intel(R) UHD Graphics 630
