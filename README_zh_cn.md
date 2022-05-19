@@ -35,18 +35,13 @@
 - /system/lib/libhoudini.so
 - /system/lib/arm/*
 - /system/lib/arm/nb/*
-- /system/vendor/lib/libhoudini.so
-- /system/vendor/etc/binfmt_misc/arm_exe
-- /system/vendor/etc/binfmt_misc/arm_dyn
+
 2. Arm_64(arm64-v8a)
 - /system/bin/houdini64
 - /system/bin/arm64/linker64
 - /system/lib64/libhoudini.so
 - /system/lib64/arm64/*
 - /system/lib64/arm64/nb/*
-- /system/vendor/lib64/libhoudini.so
-- /system/vendor/etc/binfmt_misc/arm64_exe
-- /system/vendor/etc/binfmt_misc/arm64_dyn
 
 </details>
 
