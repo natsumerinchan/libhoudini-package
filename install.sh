@@ -29,8 +29,8 @@ else
 	SYSTEM_ARCH=x86
 fi
 
-geco "-SDK: $SDK"
-geco "-Platform: $SYSTEM_ARCH"
+geco "[INFO] -SDK: $SDK"
+geco "[INFO] -Platform: $SYSTEM_ARCH"
 
 # Ensure Android version
 if test "$SDK" != "30"; then
@@ -42,41 +42,20 @@ if test "$SYSTEM_ARCH" != "x86_64"; then
 	geco "\n[!!!] Unsupport Platform: -$SYSTEM_ARCH ;This package only supports x86_64 devices!" && exit 101
 fi
 
+# Check Built-in Arm Translation
+if test -d "$SYSTEM_DIR/lib/arm"; then
+	geco "\n[!!!] Arm Translation is exist!Please find a way to remove built-in one." && exit 101
+else
+	if test -d "$SYSTEM_DIR/lib64/arm64"; then
+	    geco "\n[!!!] Arm Translation is exist!Please find a way to remove built-in one." && exit 101
+	else
+	    geco "\n[!!!] Built-in Arm Translation is not exist.You can continue."
+	fi
+fi
+
 # Before installation
-read -rn1 -p "$(geco "++++ Do you sure you want to install this package? ? [y/${GREEN}N${RC}]") " c
+read -rn1 -p "$(geco "++++ Do you want to continue? ? [y/${GREEN}N${RC}]") " c
 test "${c,,}" != 'y' && exit 101 #(exit-code ref: https://wiki.supreme-gamers.com/gearlock/developer-guide/#install-sh-exit-code)
-
-# Delete the original libhoudini
-nout rm -rf "$SYSTEM_DIR/vendor/etc/binfmt_misc/*"
-# 32 bit
-nout rm -rf "$SYSTEM_DIR/bin/houdini"
-nout rm -rf "$SYSTEM_DIR/bin/arm/linker"
-nout rm -rf "$SYSTEM_DIR/lib/libhoudini.so"
-nout rm -rf "$SYSTEM_DIR/lib/arm/*"
-nout rm -rf "$SYSTEM_DIR/vendor/lib/libhoudini.so"
-# 64 bit
-nout rm -rf "$SYSTEM_DIR/bin/houdini64"
-nout rm -rf "$SYSTEM_DIR/bin/arm64/linker64"
-nout rm -rf "$SYSTEM_DIR/lib64/libhoudini.so"
-nout rm -rf "$SYSTEM_DIR/lib64/arm64/*"
-nout rm -rf "$SYSTEM_DIR/vendor/lib64/libhoudini.so"
-
-# Delete libndk translation
-nout rm -rf "$SYSTEM_DIR/system/etc/binfmt_misc/*"
-# 32 bit
-nout rm -rf "$SYSTEM_DIR/bin/ndk_translation_program_runner_binfmt_misc"
-nout rm -rf "$SYSTEM_DIR/bin/arm/app_process"
-nout rm -rf "$SYSTEM_DIR/etc/ld.config.arm.txt"
-nout rm -rf "$SYSTEM_DIR/lib/libndk_translation.so"
-nout rm -rf "$SYSTEM_DIR/lib/libndk_translation_proxy_*.so"
-nout rm -rf "$SYSTEM_DIR/lib/arm/*"
-# 64 bit
-nout rm -rf "$SYSTEM_DIR/bin/ndk_translation_program_runner_binfmt_misc_arm64"
-nout rm -rf "$SYSTEM_DIR/bin/arm64/app_process64"
-nout rm -rf "$SYSTEM_DIR/etc/ld.config.arm64.txt"
-nout rm -rf "$SYSTEM_DIR/lib64/libndk_translation.so"
-nout rm -rf "$SYSTEM_DIR/lib64/libndk_translation_proxy_*.so"
-nout rm -rf "$SYSTEM_DIR/lib64/arm64/*"
 
 # Set permissions
 chmod -R -f 777 "$BD/system/"
