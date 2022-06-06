@@ -45,7 +45,13 @@
 
 </details>
 
-#### 6、Effect
+#### 6、让应用使用指定的原生库
+
+`pm install --abi %ARCH% %APK_PATH% `
+
+- ARCH:armeabi/armeabi-v7a/arm64-v8a/x86/x86_64
+
+#### 7、效果
 1. AIDA64
 ![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/AIDA64.png)
 
@@ -58,5 +64,5 @@
 4. Wallpaper Engine
 ![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/Wallpaper_Engine.png)
 
-#### 7、不支持的应用
+#### 8、不支持的应用
 1.Blue Archive蔚蓝档案 (能进入标题页面但加载时会闪退)
