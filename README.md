@@ -47,7 +47,13 @@ Only supports x86_64 Android11.
 
 </details>
 
-#### 6、Effect
+#### 6、Specify app native libraries
+
+`pm install --abi %ARCH% %APK_PATH% `
+
+- ARCH:armeabi/armeabi-v7a/arm64-v8a/x86/x86_64
+
+#### 7、Effect
 1. AIDA64
 ![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/AIDA64.png)
 
@@ -60,5 +66,5 @@ Only supports x86_64 Android11.
 4. Wallpaper Engine
 ![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/Wallpaper_Engine.png)
 
-#### 7、Unsupported applications
+#### 8、Unsupported applications
 1.Blue Archive (Can open the title page, but it crashes on loading.)
