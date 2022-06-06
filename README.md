@@ -1,7 +1,7 @@
 # libhoudini-for-x86_64-android11
 (Sorry for my poor English)
 
-[ **简体中文** ](README_zh_cn.md)  **English** 
+[ **简体中文** ](README_zh_cn.md) || **English** 
 
 #### 1、Description
 A Gearlock package for install libhoudini translation on x86_64 Android11,extracted from Windows Subsystem for Android™️ (WSA).
