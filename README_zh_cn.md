@@ -26,6 +26,9 @@
 4.  Enjoy！
 
 #### 5、提取内容
+
+[你可以用这个批处理脚本自行提取libhoudini文件](https://gist.github.com/natsumerinchan/b7a44acadfa66d0e07ead299423695c4)
+
 <details>
 <summary>显示全部</summary>
 
