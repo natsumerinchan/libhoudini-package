@@ -70,3 +70,4 @@ Only supports x86_64 Android11.
 
 #### 8、Unsupported applications
 1.Blue Archive (Can open the title page, but it crashes on loading.)
+- (PrimeOS 2.1.2 has fixed this bug,you can use it or you can also extract libhoudini file from PrimeOS.iso to replace WSA ones.)
