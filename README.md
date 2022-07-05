@@ -54,7 +54,7 @@ Only supports x86_64 Android11.
 ```
 git clone https://github.com/AXIM0S/gearlock-dev-kit; cd ./gearlock-dev-kit
 ./configure; rm -rf ./workdir
-git clone -b v1.9 https://github.com/natsumerinchan/libhoudini-for-x86_64-android11.git workdir
+git clone https://github.com/natsumerinchan/libhoudini-for-x86_64-android11.git workdir
 rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
 ./build
 ```
