@@ -53,13 +53,13 @@
 
 `git clone https://github.com/AXIM0S/gearlock-dev-kit; cd ./gearlock-dev-kit`
 
-`./configure; rm -rf ./workdir`
+`./configure; rm -rf ./workdir` 选择"3) Custom Core Package"
 
 `git clone https://github.com/natsumerinchan/libhoudini-for-x86_64-android11.git workdir`
 
 `rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore`
 
-`./build`
+`./build` 选择"1) I configured it manually"
 
 #### 7、让应用使用指定的原生库
 
