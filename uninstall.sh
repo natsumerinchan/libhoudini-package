@@ -15,3 +15,5 @@
 # full path for the locally prepared uninstallation script.
 
 geco "\n++ Deleting the Arm translation layer"
+mount -o remount,rw /
+mount -o remount,rw /system

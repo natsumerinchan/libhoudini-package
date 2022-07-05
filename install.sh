@@ -19,6 +19,8 @@ if test "$RECOVERY" != "yes"; then
 fi
 
 # Check if /system is writable
+mount -o remount,rw /
+mount -o remount,rw /system
 ! touch -c "$SYSTEM_DIR/lib" >/dev/null 2>&1 && geco "[!!!] $SYSTEM_DIR is not writable, did you ${PINK}SuperCharge${RC} it yet ?" && exit 101
 
 # Show sdk version and device architecture
@@ -49,7 +51,7 @@ test "${c,,}" != 'y' && exit 101 #(exit-code ref: https://wiki.supreme-gamers.co
 # Remove Built-in Arm Translation
 
 # Delete the original libhoudini
-nout rm -rf "$SYSTEM_DIR/system/etc/binfmt_misc/*"
+nout rm -rf "$SYSTEM_DIR/etc/binfmt_misc/*"
 nout rm -rf "$SYSTEM_DIR/vendor/etc/binfmt_misc/*"
 # 32 bit
 nout rm -rf "$SYSTEM_DIR/bin/houdini"
