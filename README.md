@@ -49,7 +49,7 @@ Only supports x86_64 Android11.
 
 </details>
 
-#### 6、如何构建
+#### 6、How to build
 
 
 `git clone https://github.com/AXIM0S/gearlock-dev-kit; cd ./gearlock-dev-kit`
