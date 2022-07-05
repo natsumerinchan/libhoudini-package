@@ -49,7 +49,7 @@ test "${c,,}" != 'y' && exit 101 #(exit-code ref: https://wiki.supreme-gamers.co
 # Remove Built-in Arm Translation
 
 # Delete the original libhoudini
-nout rm -rf "$SYSTEM_DIR/system/etc/binfmt_misc/*"
+nout rm -rf "$SYSTEM_DIR/etc/binfmt_misc/*"
 nout rm -rf "$SYSTEM_DIR/vendor/etc/binfmt_misc/*"
 # 32 bit
 nout rm -rf "$SYSTEM_DIR/bin/houdini"
