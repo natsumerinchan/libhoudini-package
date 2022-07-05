@@ -34,7 +34,7 @@ REQSYNC="yes" #(Deafult - yes) To make sure all your files are properly written 
 
 REQREBOOT="yes, yes" #(Deafult - no, no [BOOTED-MODE, RECOVERY-MODE]) Require user to reboot
 
-GEN_UNINS="yes" #(Deafult - no) If you want GearLock to generate an uninstallation script itself
+GEN_UNINS="no" #(Deafult - no) If you want GearLock to generate an uninstallation script itself
 
 SHOW_PROG="yes" #(Default - yes) Whether to show extraction progress while loading the pkg/extension
 
