@@ -19,6 +19,8 @@ if test "$RECOVERY" != "yes"; then
 fi
 
 # Check if /system is writable
+mount -o remount,rw /
+mount -o remount,rw /system
 ! touch -c "$SYSTEM_DIR/lib" >/dev/null 2>&1 && geco "[!!!] $SYSTEM_DIR is not writable, did you ${PINK}SuperCharge${RC} it yet ?" && exit 101
 
 # Show sdk version and device architecture
