@@ -8,7 +8,7 @@ CODENAME="libhoudini_android11_x86_64" #An Unique codename
 
 TYPE="Package" #Specify (Package / Extension)
 
-AUTHOR="natsumerinchan@Github&Gitee" #Your name as the Developer/Owner/Packer
+AUTHOR="natsumerinchan" #Your name as the Developer/Owner/Packer
 
 VERSION="v1.9" #Specify the Version of this package/extension
 
