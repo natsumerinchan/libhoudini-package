@@ -51,22 +51,38 @@ Only supports x86_64 Android11.
 
 #### 6、How to build
 
+```
+git clone https://github.com/AXIM0S/gearlock-dev-kit; cd ./gearlock-dev-kit
+```
 
-`git clone https://github.com/AXIM0S/gearlock-dev-kit; cd ./gearlock-dev-kit`
+```
+./configure; rm -rf ./workdir 
+```
+- choose "3) Custom Core Package"
 
-`./configure; rm -rf ./workdir` choose "3) Custom Core Package"
+```
+git clone https://github.com/natsumerinchan/libhoudini-for-x86_64-android11.git workdir
+```
 
-`git clone https://github.com/natsumerinchan/libhoudini-for-x86_64-android11.git workdir`
+```
+rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
+```
 
-`rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore`
-
-`./build` choose "1) I configured it manually"
+```
+./build
+``` 
+- choose "1) I configured it manually"
 
 #### 7、Specify app native libraries
 
 `pm install --abi %ARCH% %APK_PATH% `
 
-- ARCH:armeabi/armeabi-v7a/arm64-v8a/x86/x86_64
+ARCH:
+- armeabi
+- armeabi-v7a
+- arm64-v8a
+- x86
+- x86_64
 
 #### 8、Effect
 1. AIDA64
@@ -83,4 +99,4 @@ Only supports x86_64 Android11.
 
 #### 9、Unsupported applications
 1.Blue Archive (Can open the title page, but it crashes on loading.)
-- (PrimeOS 2.1.2 has fixed this bug,you can use it or you can also extract libhoudini file from PrimeOS.iso to replace WSA ones.)
+- (PrimeOS 2.1.2 has fixed this bug,you can use it or you can also extract libhoudini file from PrimeOS.iso to replace "~/gearlock-dev-kit/workdir/system" directory and build package by yourselves.)
