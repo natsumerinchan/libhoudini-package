@@ -17,13 +17,3 @@
 geco "\n++ Deleting the Arm translation layer"
 mount -o remount,rw /
 mount -o remount,rw /system
-rm -rf "$SYSTEM_DIR/etc/binfmt_misc/*"
-rm -rf "$SYSTEM_DIR/bin/houdini"
-rm -rf "$SYSTEM_DIR/bin/arm/linker"
-rm -rf "$SYSTEM_DIR/lib/libhoudini.so"
-rm -rf "$SYSTEM_DIR/lib/arm"
-rm -rf "$SYSTEM_DIR/bin/houdini64"
-rm -rf "$SYSTEM_DIR/bin/arm64/linker64"
-rm -rf "$SYSTEM_DIR/lib64/libhoudini.so"
-rm -rf "$SYSTEM_DIR/lib64/arm64"
-geco "\n++ Done."
