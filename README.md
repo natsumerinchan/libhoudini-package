@@ -8,7 +8,7 @@ A Gearlock package for install libhoudini translation on x86_64 Android11,extrac
 
 #### 2、Extracts
 
-[You can use this batch file to extract libhoudini files by yourselves.](https://gist.github.com/natsumerinchan/b7a44acadfa66d0e07ead299423695c4)
+[You can use this batch file to extract WSA libhoudini files by yourselves.](https://gist.github.com/natsumerinchan/b7a44acadfa66d0e07ead299423695c4)
 
 <details>
 <summary>Show all</summary>
