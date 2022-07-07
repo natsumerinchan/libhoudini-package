@@ -50,22 +50,38 @@
 
 #### 6、如何构建
 
+```
+git clone https://github.com/AXIM0S/gearlock-dev-kit; cd ./gearlock-dev-kit
+```
 
-`git clone https://github.com/AXIM0S/gearlock-dev-kit; cd ./gearlock-dev-kit`
+```
+./configure; rm -rf ./workdir
+```
+- 选择"3) Custom Core Package"
 
-`./configure; rm -rf ./workdir` 选择"3) Custom Core Package"
+```
+git clone https://github.com/natsumerinchan/libhoudini-for-x86_64-android11.git workdir
+```
 
-`git clone https://github.com/natsumerinchan/libhoudini-for-x86_64-android11.git workdir`
+```
+rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
+```
 
-`rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore`
-
-`./build` 选择"1) I configured it manually"
+```
+./build
+```
+- 选择"1) I configured it manually"
 
 #### 7、让应用使用指定的原生库
 
-`pm install --abi %ARCH% %APK_PATH% `
+`pm install --abi $ARCH $APK_PATH `
 
-- ARCH:armeabi/armeabi-v7a/arm64-v8a/x86/x86_64
+ARCH:
+ - armeabi
+ - armeabi-v7a
+ - arm64-v8a
+ - x86
+ - x86_64
 
 #### 8、效果
 1. AIDA64
@@ -82,4 +98,4 @@
 
 #### 9、不支持的应用
 1.Blue Archive蔚蓝档案 (能进入标题页面但加载时会闪退)
-- (PrimeOS 2.1.2已经修复了这个错误，你可以使用它，或者你也可以从PrimeOS.iso中提取libhoudini来替换WSA的文件。)
+- (PrimeOS 2.1.2已经修复了这个错误，你可以使用它，或者你也可以从PrimeOS.iso中提取libhoudini来替换"~/gearlock-dev-kit/workdir/system"目录并自行构建。)
