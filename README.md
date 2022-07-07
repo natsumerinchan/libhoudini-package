@@ -61,7 +61,7 @@ git clone https://github.com/AXIM0S/gearlock-dev-kit; cd ./gearlock-dev-kit
 - choose "3) Custom Core Package"
 
 ```
-git clone https://github.com/natsumerinchan/libhoudini-for-x86_64-android11.git workdir
+git clone https://github.com/natsumerinchan/libhoudini-package.git workdir
 ```
 
 ```
