@@ -54,3 +54,19 @@ rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
 ./build
 ``` 
 - choose "1) I configured it manually"
+
+#### 4、Restricted architecture and Android version
+
+please modify [install.sh](install.sh) (Delete these code if you don't need it.)
+
+```
+# Ensure Android version
+if test "$SDK" != "30"; then
+	geco "\n[!!!] This package only supports Android11." && exit 101
+fi
+
+# Ensure Device Architecture
+if test "$SYSTEM_ARCH" != "x86_64"; then
+	geco "\n[!!!] Unsupport Platform: -$SYSTEM_ARCH ;This package only supports x86_64 devices!" && exit 101
+fi
+```

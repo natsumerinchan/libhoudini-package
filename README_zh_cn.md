@@ -53,3 +53,19 @@ rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
 ./build
 ```
 - 选择"1) I configured it manually"
+  
+#### 4、限制架构和安卓版本
+
+请在[install.sh](install.sh)中修改(如果不需要可删除这段代码)
+
+```
+# Ensure Android version
+if test "$SDK" != "30"; then
+	geco "\n[!!!] This package only supports Android11." && exit 101
+fi
+
+# Ensure Device Architecture
+if test "$SYSTEM_ARCH" != "x86_64"; then
+	geco "\n[!!!] Unsupport Platform: -$SYSTEM_ARCH ;This package only supports x86_64 devices!" && exit 101
+fi
+```
