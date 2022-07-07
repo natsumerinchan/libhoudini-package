@@ -57,7 +57,7 @@ rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
 
 #### 4、Restricted architecture and Android version
 
-please modify [install.sh](install.sh) (Delete these code if you don't need it.)
+Please modify this code in [install.sh](install.sh) (Delete it if you don't need it.)
 
 ```
 # Ensure Android version
