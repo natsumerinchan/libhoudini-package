@@ -47,7 +47,7 @@ git clone -b template https://github.com/natsumerinchan/libhoudini-package.git w
 rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
 ```
 
-- 把你提取或从其他地方获取的libhoudini文件放入"~/gearlock-dev-kit/workdir/system"
+- 把你从其他地方提取或获取的libhoudini文件放入"~/gearlock-dev-kit/workdir/system"
 
 ```
 ./build
