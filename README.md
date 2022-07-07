@@ -47,11 +47,11 @@ git clone https://github.com/AXIM0S/gearlock-dev-kit; cd ./gearlock-dev-kit
 git clone -b template https://github.com/natsumerinchan/libhoudini-package.git workdir
 ```
 
-- Put the libhoudini file which you extracted or obtained elsewhere into "~/gearlock-dev-kit/workdir/system" directory.
-
 ```
 rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
 ```
+
+- Put the libhoudini file which you extracted or obtained elsewhere into "~/gearlock-dev-kit/workdir/system" directory.
 
 ```
 ./build
