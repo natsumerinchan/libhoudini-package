@@ -12,7 +12,7 @@ AUTHOR="natsumerinchan" #Your name as the Developer/Owner/Packer
 
 VERSION="v2.0" #Specify the Version of this package/extension
 
-SHORTDESC="Install Android11 Arm translation extracted from WSA.(Only for x86_64)" #Provide a short description about this package/extension
+SHORTDESC="Install Android11 Arm translation." #Provide a short description about this package/extension
 
 C_EXTNAME="" #For Specifing a custom name for your extension script ($NAME is used if not defined)
 
