@@ -60,12 +60,6 @@ rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
 
 ```
 # Ensure Android version
-if test "$SDK" != "30"; then
-	geco "\n[!!!] This package only supports Android11." && exit 101
-fi
-
-# Ensure Device Architecture
-if test "$SYSTEM_ARCH" != "x86_64"; then
-	geco "\n[!!!] Unsupport Platform: -$SYSTEM_ARCH ;This package only supports x86_64 devices!" && exit 101
-fi
+HOUDINI_ARCH=x86_64
+HOUDINI_API=30
 ```
