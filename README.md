@@ -55,7 +55,7 @@ rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
 ``` 
 - choose "1) I configured it manually"
 
-#### 4、Restricted architecture and Android version
+#### 4、Restricted Architecture and Minimum Android API
 
 Please modify this code in [install.sh](install.sh) (Delete it if you don't need it.)
 
