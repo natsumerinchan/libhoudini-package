@@ -54,12 +54,11 @@ rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
 ```
 - 选择"1) I configured it manually"
   
-#### 4、限制架构和安卓版本
+#### 4、限制架构和最低安卓版本API
 
 请在[install.sh](install.sh)中修改
 
 ```
-# Ensure Android version
 HOUDINI_ARCH=x86_64
 HOUDINI_API=30
 ```
