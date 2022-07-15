@@ -98,4 +98,4 @@ ARCH:
 
 #### 9、不支持的应用
 1.Blue Archive蔚蓝档案 (能进入标题页面但加载时会闪退)
-- (PrimeOS 2.1.2已经修复了这个错误，你可以使用它，或者你也可以从PrimeOS.iso中提取libhoudini来替换"~/gearlock-dev-kit/workdir/system"目录并自行构建。)
+- (PrimeOS 2.1.2已经修复了这个错误，你可以使用它，或者你也可以从PrimeOS.iso中提取libhoudini并参考template分支进行构建。)
