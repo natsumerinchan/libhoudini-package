@@ -37,7 +37,7 @@ geco "[INFO] -SDK: $SDK"
 geco "[INFO] -Platform: $SYSTEM_ARCH"
 
 # Ensure Android version
-if test "$SDK" < "$HOUDINI_API"; then
+if test "$SDK" -lt "$HOUDINI_API"; then
 	geco "\n[!!!] This package only supports Android11." && exit 101
 fi
 
