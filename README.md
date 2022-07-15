@@ -99,4 +99,4 @@ ARCH:
 
 #### 9、Unsupported applications
 1.Blue Archive (Can open the title page, but it crashes on loading.)
-- (PrimeOS 2.1.2 has fixed this bug,you can use it or you can also extract libhoudini file from PrimeOS.iso to replace "~/gearlock-dev-kit/workdir/system" directory and build package by yourselves.)
+- (PrimeOS 2.1.2 has fixed this bug and you can use it, or you can extract libhoudini from PrimeOS.iso and refer to the template branch to build.)
