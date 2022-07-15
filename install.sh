@@ -35,7 +35,7 @@ geco "[INFO] -SDK: $SDK"
 geco "[INFO] -Platform: $SYSTEM_ARCH"
 
 # Ensure Android version
-if test "$SDK" != "30"; then
+if test "$SDK" < "30"; then
 	geco "\n[!!!] This package only supports Android11." && exit 101
 fi
 
