@@ -33,17 +33,17 @@ else
 	SYSTEM_ARCH=x86
 fi
 
-geco "[INFO] -SDK: $SDK"
+geco "[INFO] -API_Level: $SDK"
 geco "[INFO] -Platform: $SYSTEM_ARCH"
 
 # Ensure Android version
 if test "$SDK" -lt "$HOUDINI_API"; then
-	geco "\n[!!!] This package only supports Android11." && exit 101
+	geco "\n[!!!] API_Level could not lower than $HOUDINI_API." && exit 101
 fi
 
 # Ensure Device Architecture
 if test "$SYSTEM_ARCH" != "$HOUDINI_ARCH"; then
-	geco "\n[!!!] Unsupport Platform: -$SYSTEM_ARCH ;This package only supports x86_64 devices!" && exit 101
+	geco "\n[!!!] This package only supports $HOUDINI_ARCH devices!" && exit 101
 fi
 
 # Before installation
