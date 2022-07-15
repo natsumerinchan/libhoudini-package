@@ -6,6 +6,8 @@
 get_base_dir # Returns execution directory path in $BD variable
 # get_net_stat
 check_compat 7.2.22
+HOUDINI_ARCH=x86_64
+HOUDINI_API=30
 #####--- Import Functions ---#####
 
 # Ensure compatible GearLock version
@@ -35,12 +37,12 @@ geco "[INFO] -SDK: $SDK"
 geco "[INFO] -Platform: $SYSTEM_ARCH"
 
 # Ensure Android version
-if test "$SDK" < "30"; then
+if test "$SDK" < "$HOUDINI_API"; then
 	geco "\n[!!!] This package only supports Android11." && exit 101
 fi
 
 # Ensure Device Architecture
-if test "$SYSTEM_ARCH" != "x86_64"; then
+if test "$SYSTEM_ARCH" != "$HOUDINI_ARCH"; then
 	geco "\n[!!!] Unsupport Platform: -$SYSTEM_ARCH ;This package only supports x86_64 devices!" && exit 101
 fi
 
