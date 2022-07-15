@@ -56,7 +56,7 @@ rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
   
 #### 4、限制架构和安卓版本
 
-请在[install.sh](install.sh)中修改(如果不需要可删除这段代码)
+请在[install.sh](install.sh)中修改
 
 ```
 # Ensure Android version
