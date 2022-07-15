@@ -57,7 +57,7 @@ rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
 
 #### 4、Restricted Architecture and Minimum Android API
 
-Please modify this code in [install.sh](install.sh) (Delete it if you don't need it.)
+Please modify this code in [install.sh](install.sh)
 
 ```
 HOUDINI_ARCH=x86_64
