@@ -4,14 +4,6 @@
 
 # Define your props inside a var in <prop> <value> format
 
-mount -o remount,rw /
-mount -o remount,rw /system
-if test -d "$SYSTEM_DIR/lib64/hw"; then
-	SYSTEM_ARCH=x86_64
-else
-	SYSTEM_ARCH=x86
-fi
-
 ARM_TRANSLATION_x86="
 ro.product.cpu.abilist x86,armeabi-v7a,armeabi
 ro.product.cpu.abilist32 x86,armeabi-v7a,armeabi
@@ -44,9 +36,6 @@ ro.zygote zygote64_32
 "
 
 # Now call the var over gearprop with quotes
+# You should modify 'gearprop "$ARM_TRANSLATION_x86_64"' to 'gearprop "$ARM_TRANSLATION_x86"' if your package architecture is x86.
 
-if test "$SYSTEM_ARCH" != "x86_64"; then
-        gearprop "$ARM_TRANSLATION_x86"
-else
-        gearprop "$ARM_TRANSLATION_x86_64"
-fi
+gearprop "$ARM_TRANSLATION_x86_64"
