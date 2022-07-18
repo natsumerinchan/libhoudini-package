@@ -7,9 +7,9 @@
 mount -o remount,rw /
 mount -o remount,rw /system
 if test -d "$SYSTEM_DIR/lib64/hw"; then
-	      SYSTEM_ARCH=x86_64
+	SYSTEM_ARCH=x86_64
 else
-	      SYSTEM_ARCH=x86
+	SYSTEM_ARCH=x86
 fi
 
 ARM_TRANSLATION_x86="
