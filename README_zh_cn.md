@@ -56,9 +56,11 @@ rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
   
 #### 4、限制架构和最低安卓API
 
-请在[install.sh](install.sh)中修改
+- 请在[install.sh](install.sh)中修改
 
 ```
 HOUDINI_ARCH=x86_64
 HOUDINI_API=30
 ```
+
+- 如果你构建的包只含32位houdini文件，请自行在[boot-comp.sh](gearlock/gearboot/boot-comp.sh)和[post-fs-data.sh](gearlock/gearboot/post-fs-data.sh)删除与64位houdini有关的行。

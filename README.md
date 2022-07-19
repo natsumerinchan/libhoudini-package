@@ -57,9 +57,11 @@ rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
 
 #### 4、Restricted Architecture and Minimum Android API
 
-Please modify this code in [install.sh](install.sh)
+- Please modify this code in [install.sh](install.sh)
 
 ```
 HOUDINI_ARCH=x86_64
 HOUDINI_API=30
 ```
+
+- If you build a package that contains only 32-bit houdini files, please remove the lines relating to 64-bit houdini in [boot-comp.sh](gearlock/gearboot/boot-comp.sh) and [post-fs-data.sh](gearlock/gearboot/post-fs-data.sh) by yourselves.
