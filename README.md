@@ -98,6 +98,8 @@ ARCH:
 #### 9、Known bugs
 1.Blue Archive (Can open the title page, but it crashes on loading.)
 - Due to app's data is not recognized it will make the game crash on loading. To fix this, there're 2 solutions :
+   
+   ***These method are for people who can be able to compile custom Android-x86 images***
   + Make a script that set data permission to 777 whenever an app is being opened (PrimeOS method - **NOT RECOMMEND**)
     * Cherry-pick these two commits :
     https://github.com/supremegamers/device_generic_common/commit/2d47891376c96011b2ee3c1ccef61cb48e15aed6
@@ -109,7 +111,6 @@ ARCH:
    + Use bind mounting file-systems (**RECOMMEND**)
    
    The proper way is to use file-systems such as `sdcardfs` or `esdfs` so that it can bind mount both apps data or obb correctly. This method is still being used by Android devices today.      
-   ***This method is for people who can be able to compile custom Android-x86 images***
 
      * Find a kernel that include the file-systems :
         
@@ -120,7 +121,7 @@ ARCH:
         
     * Go to device/generic/common and revert [this commit](https://github.com/supremegamers/device_generic_common/commit/ff34d6d549f026156188cf1467f26628e5cac658)
     
-    ***(These next step are required for people who want to use esdfs instead, which [HMTheBoy154](https://github.com/hmtheboy154/) recommend***
+    ***(These next step are required for people who want to use esdfs instead, which [HMTheBoy154](https://github.com/hmtheboy154/) recommend)***
     * Still in device/generic/common, open device.mk and add these line 
     ```
     PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
