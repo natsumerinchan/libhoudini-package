@@ -12,10 +12,10 @@ Only supports x86_64 Android11.
 #### 3、Environment
 
 - Computer：Lenovo Legion Y7000 2020 (82AV)
-- Cpu:Intel core i5-10200H
-- Gpu:
-  - Integrated Graphics：Intel(R) UHD Graphics 630
-  - Discrete Graphics：Nvidia GeForce GTX 1650
+- CPU:Intel core i5-10200H
+- GPU:
+  + Integrated Graphics：Intel(R) UHD Graphics 630
+  + Discrete Graphics：Nvidia GeForce GTX 1650
 - RAM：16GB DDR4 (8GB+8GB)
 - OS: [AOSP11-stock](https://sourceforge.net/projects/blissos-dev/files/Android-Generic/PC/aosp/stock/11/)
 
@@ -38,14 +38,12 @@ Only supports x86_64 Android11.
 - /system/bin/arm/linker
 - /system/lib/libhoudini.so
 - /system/lib/arm/*
-- /system/lib/arm/nb/*
 
-2. Arm_64(arm64-v8a)
+1. Arm_64(arm64-v8a)
 - /system/bin/houdini64
 - /system/bin/arm64/linker64
 - /system/lib64/libhoudini.so
 - /system/lib64/arm64/*
-- /system/lib64/arm64/nb/*
 
 </details>
 
@@ -86,18 +84,18 @@ ARCH:
 
 #### 8、Effect
 1. AIDA64
-![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/AIDA64.png)
+![AIDA64](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/AIDA64.png)
 
 2. Desktop
-![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/Desktop.png)
+![Desktop](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/Desktop.png)
 
 3. PCR
-![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/PCR.png)
+![PCR](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/PCR.png)
 
 4. Wallpaper Engine
-![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/Wallpaper_Engine.png)
+![Wallpaper Engine](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/Wallpaper_Engine.png)
 
-#### 9、Unsupported applications
+#### 9、Known bugs
 1.Blue Archive (Can open the title page, but it crashes on loading.)
 - Due to app's data is not recognized it will make the game crash on loading. To fix this, there're 2 solutions :
   + Make a script that set data permission to 777 whenever an app is being opened (PrimeOS method - **NOT RECOMMEND**)

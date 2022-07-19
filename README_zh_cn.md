@@ -11,10 +11,10 @@
 #### 3、测试环境
 
 - Computer：联想拯救者Y7000 2020 (82AV)
-- Cpu:Intel core i5-10200H
-- Gpu:
-  - 核显：Intel(R) UHD Graphics 630
-  - 独显：Nvidia GeForce GTX 1650
+- CPU:Intel core i5-10200H
+- GPU:
+  + 核显：Intel(R) UHD Graphics 630
+  + 独显：Nvidia GeForce GTX 1650
 - 内存：16GB DDR4 (8GB+8GB)
 - 系统: [AOSP11-stock](https://sourceforge.net/projects/blissos-dev/files/Android-Generic/PC/aosp/stock/11/)
 
@@ -37,14 +37,12 @@
 - /system/bin/arm/linker
 - /system/lib/libhoudini.so
 - /system/lib/arm/*
-- /system/lib/arm/nb/*
 
-2. Arm_64(arm64-v8a)
+1. Arm_64(arm64-v8a)
 - /system/bin/houdini64
 - /system/bin/arm64/linker64
 - /system/lib64/libhoudini.so
 - /system/lib64/arm64/*
-- /system/lib64/arm64/nb/*
 
 </details>
 
@@ -96,7 +94,7 @@ ARCH:
 4. Wallpaper Engine
 ![输入图片说明](https://raw.githubusercontent.com/natsumerinchan/My_Own_Drawing_Bed/main/libhoudini-for-x86_64-android11/Wallpaper_Engine.png)
 
-#### 9、不支持的应用
+#### 9、已知bug
 1.Blue Archive (能进入标题页面但加载时会闪退.)
 - 由于应用程序的data未被识别，它将使游戏在加载时崩溃。为了解决这个问题，有两个解决方案 :
   + 编写一个脚本，每当有一个应用程序被打开时，自动将data权限设置为777 (这是PrimeOS使用的方法 - **不推荐**)
@@ -114,7 +112,7 @@ ARCH:
 
      * 找一个包括这些文件系统的内核 :
         
-        ** 对于 `sdcardfs`, 请查阅 [maurossi](https://github.com/maurossi/linux) 或 [youling257](https://github.com/youling257/android-mainline) : 
+        ** 对于 `sdcardfs`, 请查阅 [maurossi](https://github.com/maurossi/linux) 或 [youling257](https://github.com/youling257/android-mainline)的仓库 : 
         (建议把 `CONFIG_SDCARD_FS` 从 =m改为 =y)
         
         ** 对于 `esdfs`, 请查阅 [HMTheBoy154](https://github.com/hmtheboy154/Darkmatter-kernel) (umbral 分支) or [youling257](https://github.com/youling257/android-mainline) (5.18 以上的分支). `esdfs`和`pkglist`来自ChromiumOS的第三方内核仓库。
