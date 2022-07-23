@@ -6,6 +6,8 @@
 
 # Enable native bridge for target executables
 
+mount -o rw,remount /
+mount -o rw,remount /system
 mount binfmt_misc -t binfmt_misc /proc/sys/fs/binfmt_misc
 
 cp /system/etc/binfmt_misc/arm_exe /proc/sys/fs/binfmt_misc/register
