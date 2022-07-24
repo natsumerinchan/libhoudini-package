@@ -63,4 +63,4 @@ HOUDINI_ARCH=x86_64
 HOUDINI_API=30
 ```
 
-- 如果你构建的包只含32位houdini文件，请自行在[boot-comp.sh](gearlock/gearboot/boot-comp.sh)和[post-fs-data.sh](gearlock/gearboot/post-fs-data.sh)删除与64位houdini有关的行。
+- 如果你构建的包只含32位houdini文件，请自行在[init.sh](gearlock/gearboot/init.sh)和[post-fs-data.sh](gearlock/gearboot/post-fs-data.sh)删除与64位houdini有关的行。
