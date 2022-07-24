@@ -64,4 +64,4 @@ HOUDINI_ARCH=x86_64
 HOUDINI_API=30
 ```
 
-- If you build a package that contains only 32-bit houdini files, please remove the lines relating to 64-bit houdini in [boot-comp.sh](gearlock/gearboot/boot-comp.sh) and [post-fs-data.sh](gearlock/gearboot/post-fs-data.sh) by yourselves.
+- If you build a package that contains only 32-bit houdini files, please remove the lines relating to 64-bit houdini in [init.sh](gearlock/gearboot/init.sh) and [post-fs-data.sh](gearlock/gearboot/post-fs-data.sh) by yourselves.
