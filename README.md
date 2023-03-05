@@ -50,26 +50,20 @@ Only supports x86_64 Android11.
 #### 6、How to build
 
 ```
-git clone https://github.com/AXIM0S/gearlock-dev-kit; cd ./gearlock-dev-kit
+git clone https://github.com/natsumerinchan/libhoudini-package.git
 ```
 
 ```
-./configure; rm -rf ./workdir 
-```
-- choose "3) Custom Core Package"
-
-```
-git clone https://github.com/natsumerinchan/libhoudini-package.git workdir
+cd libhoudini-package
 ```
 
 ```
-rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
+cp -r ./src ./.github/workdir
 ```
 
 ```
-./build
-``` 
-- choose "1) I configured it manually"
+cd ./.github && ./build
+```
 
 #### 7、Specify app native libraries
 

@@ -49,26 +49,20 @@
 #### 6、如何构建
 
 ```
-git clone https://github.com/AXIM0S/gearlock-dev-kit; cd ./gearlock-dev-kit
+git clone https://github.com/natsumerinchan/libhoudini-package.git
 ```
 
 ```
-./configure; rm -rf ./workdir
-```
-- 选择"3) Custom Core Package"
-
-```
-git clone https://github.com/natsumerinchan/libhoudini-package.git workdir
+cd libhoudini-package
 ```
 
 ```
-rm -rf ./workdir/*.md ./workdir/LICENSE ./workdir/.git ./workdir/.gitignore
+cp -r ./src ./.github/workdir
 ```
 
 ```
-./build
+cd ./.github && ./build
 ```
-- 选择"1) I configured it manually"
 
 #### 7、让应用使用指定的原生库
 
