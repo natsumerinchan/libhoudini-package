@@ -10,7 +10,7 @@ TYPE="Package" #Specify (Package / Extension)
 
 AUTHOR="natsumerinchan" #Your name as the Developer/Owner/Packer
 
-VERSION="v2.1" #Specify the Version of this package/extension
+VERSION="v2.2" #Specify the Version of this package/extension
 
 SHORTDESC="Install Android11 Arm translation extracted from WSA.(Only for x86_64)" #Provide a short description about this package/extension
 

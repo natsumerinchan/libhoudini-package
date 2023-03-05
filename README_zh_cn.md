@@ -133,6 +133,8 @@ ARCH:
     效果 : [HMTheBoy154](https://github.com/hmtheboy154) 在BlissOS 15.6 (Android 12L)上进行的测试
     ![photo_2022-07-19_14-01-19](https://user-images.githubusercontent.com/39849246/179693211-a6a711a0-a968-418e-bfb0-aef289d34f54.jpg)
 
+#### 10、Credits
 
+- [gearlock](https://github.com/axonasif/gearlock)
 
-
+- [gearlock-dev-kit](https://github.com/axonasif/gearlock-dev-kit)

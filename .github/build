@@ -1,0 +1,140 @@
+#!/usr/bin/env bash
+
+# Check Android env
+if test -z "$GEARLOCK_VER"; then
+	BD="$(dirname "$(readlink -f "$0")")"
+	export GTMP="$BD/cache"
+	mkdir -p "$GTMP"
+	WORKDIR="$BD/workdir"
+	GEARLOCK_NAME="gearlock"
+	GRLOAD="$BD/gearload"
+	mkdir -p "$GRLOAD"
+	PATH="$BD/bin:$PATH"
+	! chmod -R 777 "$BD/bin" && echo -e "Failed to get execution permissions on 'bin/garca'" && exit 1
+fi
+
+# Define Vars
+_self="${0##*/}"
+CompRatio="-mx=${3:-10}"
+CompMethod="-m0=${2:-zstd}"
+GETT="$WORKDIR"/'!zygote.sh'
+PS3="$(echo -e "\nEnter a number >> ")"
+
+# Locate garca
+GARC_PATH="$(command -v garca)" || GARC_PATH="${_self}/bin/garca"
+
+# Check if zygote exist
+test ! -e "$GETT" && echo -e "No package was set-up, run ./configure first." && exit 1
+
+# Colors
+RC='\033[0m' RED='\033[0;31m' BRED='\033[1;31m' GRAY='\033[1;30m' BLUE='\033[0;34m' BBLUE='\033[1;34m' CYAN='\033[0;34m' BCYAN='\033[1;34m' WHITE='\033[1;37m' GREEN='\033[0;32m' BGREEN='\033[1;32m' YELLOW='\033[1;33m' PURPLE='\033[0;35m' BPURPLE='\033[1;35m' ORANGE='\033[0;33m'
+
+# Define functions
+function geco() {
+	echo -e "$@"
+}
+
+function get_value() {
+	sed -n "s/^$1=//p" "$GETT" | sed -e "s|\"||g" -e "s| #.*||" 2>/dev/null
+}
+
+function update_value() {
+	sed -i "s|\b$1=\".*\"|$1=\"$2\"|g" "$GETT"
+}
+
+function set_type(){
+	test -f "$WORKDIR/$GEARLOCK_NAME/extension.sh" && TTYPE="Extension"
+	update_value TYPE "${TTYPE:="Package"}"
+}
+
+function show_zygote_header(){
+	cat << EOF
+  ______   ______   ______   ______   ______   ______   ______   ______   ______   ______   ______   ______
+ /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/
+
+  ._.   ___
+  | |  / /   *Name: $NAME
+  |_|  \ \   *Version: $VERSION
+  |-|  < <   *Author: $AUTHOR
+  | |  / /   *Type: $TYPE
+  |_|  \_\_  *ShortDesc: $SHORTDESC
+
+  ______   ______   ______   ______   ______   ______   ______   ______   ______   ______   ______   ______
+ /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/  /_____/
+
+
+
+EOF
+}
+
+function gen_attars(){
+	local zD="$WORKDIR"/'.!zygote'
+	local fM="$zD/mode" sP="$zD/.sParent"
+	local sT="$zD/.sTarget" sL="$zD/link"
+	
+	mkdir -p "${zD:="$WORKDIR"/'.!zygote'}"
+	if [ -n "$(find "$WORKDIR" -type l -exec realpath {} + | sed "s|"$WORKDIR"/||" | awk '{print "\""$0"\""}')" ]; then
+		find "$WORKDIR" -type l -exec realpath {} + | sed "s|"$WORKDIR"/||g" | awk '{print "\""$0"\""}' | sed 's|\"/|\"|g' > "${sP}"
+		find "$WORKDIR" -type l -printf '"%p"\n' | sed "s|"$WORKDIR"/||g" | sed 's|\"/|\"|g' > "${sT}"
+		paste -d " " "$sP" "$sT" > "$sL" && rm -f "$sP" "$sT"
+	else
+		rm -f "$sL"
+	fi
+	find "$WORKDIR" -printf '%#m "%p"\n' | sed -e "s|"$WORKDIR"/||" -e "s|.*"$WORKDIR".*||" | awk 'NF' > "${fM}"
+}
+
+# Build process functions
+function build_gxp(){
+	render_header
+	gen_attars
+	"$GARC_PATH" a '-x!readme*' ${CompMethod} ${CompRatio} $@ "$GRLOAD/${NAME}_${VERSION}_${AUTHOR}.gxp" "$WORKDIR"/* "$WORKDIR"/'.!zygote'; print_success; }
+
+function render_header(){
+	clear
+	NAME="$(get_value NAME)"
+	VERSION="$(get_value VERSION)"
+	AUTHOR="$(get_value AUTHOR)"
+	TYPE="$(get_value TYPE)"
+	SHORTDESC="$(get_value SHORTDESC)"
+	test "$(get_value DEF_HEADER)" == "yes" && show_zygote_header
+}
+
+function print_success(){
+	if [ $? != 0 ]; then
+		geco "\nBuild failed ..."
+	else
+		geco "\n$TTYPE successfully build as "${NAME}"_"${VERSION}"_"${AUTHOR}".gxp and can be found at gearload dir"
+		test -n "$GEARLOCK_VER" && geco "You can test it through ${YELLOW}GXPM${RC} right now"
+		chmod -Rf 777 "$GRLOAD" 2>/dev/null
+	fi
+	:
+}
+
+function show_help(){
+	geco "
+GearLock Development Kit
+\$ Command Line Options: ./${_self} <option> <optional-compMethod> <optional-compRatio>
+
+
+    --nowizard                Does not use wizard mode
+
+    --help, -h                Print this help message
+    
+
+\$ Available compMethods: bzip2 bcj2 bcj ppc ia64 arm armt sparc swap2 swap4 copy deflate64 deflate delta lzma2 flzma2 lzma zstd(default) lz4
+\$ Default compRatio level: 10 (Max 23)
+\$ Note: It is advised not to change the compMethod
+	"
+}
+
+function wizard_run(){
+	build_gxp
+}
+
+
+	if [ -z "$1" ]; then set_type; wizard_run; else
+		case "$1" in
+			--nowizard) set_type; build_gxp ;;
+			--help|-h) show_help ;;
+			*) geco "${_self}: unknown option: $*" && show_help ;;
+	esac; fi
