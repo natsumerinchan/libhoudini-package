@@ -1,0 +1,52 @@
+name: Build Gearlock Package
+
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+        RELEASE_CONFIG:
+          description: 'Upload to Releases'
+          required: true
+          default: "false"
+          type: boolean
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+      
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: Build package
+        run: |
+          cd $GITHUB_WORKSPACE
+          mv $GITHUB_WORKSPACE/src $GITHUB_WORKSPACE/.github/workdir
+          cd $GITHUB_WORKSPACE/.github
+          ./build
+          
+      - name: Get current time
+        uses: josStorer/get-current-time@v2.0.2
+        id: current-time
+        with:
+          format: YYYYMMDD-HHmmss
+          utcOffset: "+08:00"
+      
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Libhoudini_Android11_x86_64-${{ steps.current-time.outputs.formattedTime }}
+          path: |
+            .github/gearload/*.gxp
+            
+      - name: release
+        if: github.event.inputs.RELEASE_CONFIG != 'false'
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            .github/gearload/*.gxp
