@@ -101,7 +101,7 @@ function print_success(){
 	if [ $? != 0 ]; then
 		geco "\nBuild failed ..."
 	else
-		geco "\n$TTYPE successfully build as "${NAME}"_"${VERSION}"_"${AUTHOR}".gxp and can be found at gearload dir"
+		geco "\n$TTYPE successfully build as "${NAME}"_"${VERSION}"_"${AUTHOR}".gxp and can be found at the first directory."
 		test -n "$GEARLOCK_VER" && geco "You can test it through ${YELLOW}GXPM${RC} right now"
 		chmod -Rf 777 "$GRLOAD" 2>/dev/null
 	fi
