@@ -7,8 +7,6 @@ if test -z "$GEARLOCK_VER"; then
 	mkdir -p "$GTMP"
 	WORKDIR="$BD/workdir"
 	GEARLOCK_NAME="gearlock"
-	GRLOAD="$BD/gearload"
-	mkdir -p "$GRLOAD"
 	PATH="$BD/bin:$PATH"
 	! chmod -R 777 "$BD/bin" && echo -e "Failed to get execution permissions on 'bin/garca'" && exit 1
 fi
@@ -87,7 +85,7 @@ function gen_attars(){
 function build_gxp(){
 	render_header
 	gen_attars
-	"$GARC_PATH" a '-x!readme*' ${CompMethod} ${CompRatio} $@ "$GRLOAD/${NAME}_${VERSION}_${AUTHOR}.gxp" "$WORKDIR"/* "$WORKDIR"/'.!zygote'; print_success; }
+	"$GARC_PATH" a '-x!readme*' ${CompMethod} ${CompRatio} $@ "../${NAME}_${VERSION}_${AUTHOR}.gxp" "$WORKDIR"/* "$WORKDIR"/'.!zygote'; print_success; }
 
 function render_header(){
 	clear

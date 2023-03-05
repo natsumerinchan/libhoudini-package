@@ -42,11 +42,11 @@ jobs:
         with:
           name: Libhoudini_Android11_x86_64-${{ steps.current-time.outputs.formattedTime }}
           path: |
-            .github/gearload/*.gxp
+            *.gxp
             
       - name: release
         if: github.event.inputs.RELEASE_CONFIG != 'false'
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            .github/gearload/*.gxp
+            *.gxp
