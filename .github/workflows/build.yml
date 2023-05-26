@@ -4,10 +4,16 @@ name: Build Gearlock Package
 on:
   push:
     branches: [ "Android11-x86_64" ]
+    paths:
+      - '.github/**'
+      - 'src/**'
     tags:
       - "v*"
   pull_request:
     branches: [ "Android11-x86_64" ]
+    paths:
+      - '.github/**'
+      - 'src/**'
   workflow_dispatch:
     inputs:
         RELEASE_CONFIG:
