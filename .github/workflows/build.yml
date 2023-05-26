@@ -3,8 +3,11 @@ name: Build Gearlock Package
 
 on:
   push:
+    branches: [ "Android11-x86_64" ]
     tags:
       - "v*"
+  pull_request:
+    branches: [ "Android11-x86_64" ]
   workflow_dispatch:
     inputs:
         RELEASE_CONFIG:
@@ -45,7 +48,7 @@ jobs:
             *.gxp
             
       - name: release
-        if: github.event.inputs.RELEASE_CONFIG != 'false'
+        if: github.event.inputs.RELEASE_CONFIG == 'true' || github.ref_type == 'tag'
         uses: softprops/action-gh-release@v1
         with:
           files: |
