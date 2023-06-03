@@ -90,42 +90,44 @@ ARCH:
 
 #### 9、已知bug
 1.Blue Archive (能进入标题页面但加载时会闪退.)
-- 由于应用程序的data未被识别，它将使游戏在加载时崩溃。为了解决这个问题，有两个解决方案 :
+- 由于应用程序的data未被识别，它将使游戏在加载时崩溃。为了解决这个问题，有两个解决方案 :~~
 
-   ***这些方法是为那些能够编译自定义Android-x86镜像的人准备的。***
-  + 编写一个脚本，每当有一个应用程序被打开时，自动将data权限设置为777 (这是PrimeOS使用的方法 - **不推荐**)
-    * Cherry-pick这两个提交 :
-    https://github.com/supremegamers/device_generic_common/commit/2d47891376c96011b2ee3c1ccef61cb48e15aed6
-    https://github.com/supremegamers/android_frameworks_base/commit/24a08bf800b2e461356a9d67d04572bb10b0e819
+   ~~***这些方法是为那些能够编译自定义Android-x86镜像的人准备的。***~~
+  ~~+ 编写一个脚本，每当有一个应用程序被打开时，自动将data权限设置为777 (这是PrimeOS使用的方法 - **不推荐**)~~
+    ~~* Cherry-pick这两个提交 :~~
+    ~~https://github.com/supremegamers/device_generic_common/commit/2d47891376c96011b2ee3c1ccef61cb48e15aed6~~
+    ~~https://github.com/supremegamers/android_frameworks_base/commit/24a08bf800b2e461356a9d67d04572bb10b0e819~~
    
-    效果 : [SGNight](https://github.com/SGNight) 在ProjectSakura-x86上进行的测试
+    ~~效果 : [SGNight](https://github.com/SGNight) 在ProjectSakura-x86上进行的测试~~
    ![效果](https://cdn.discordapp.com/attachments/631759304097267712/967155258985943090/IMG_20220423_013402.jpg)
    
-   + 使用绑定挂载文件系统 (**推荐**)
+   ~~+ 使用绑定挂载文件系统 (**推荐**)~~
    
-   正确的方法是使用文件系统，如`sdcardfs`或`esdfs`，这样它可以正确地绑定挂载应用程序的data或obb。这种方法今天仍然被安卓设备所使用。      
+   ~~正确的方法是使用文件系统，如`sdcardfs`或`esdfs`，这样它可以正确地绑定挂载应用程序的data或obb。这种方法今天仍然被安卓设备所使用。~~      
 
      * 找一个包括这些文件系统的内核 :
         
-        ** 对于 `sdcardfs`, 请checkout [maurossi](https://github.com/maurossi/linux) 或 [youling257](https://github.com/youling257/android-mainline)的仓库 : 
-        (建议把 `CONFIG_SDCARD_FS` 从 =m改为 =y)
+        ~~对于 `sdcardfs`, 请checkout [maurossi](https://github.com/maurossi/linux) 或 [youling257](https://github.com/youling257/android-mainline)的仓库 : 
+        (建议把 `CONFIG_SDCARD_FS` 从 =m改为 =y)~~
         
-        ** 对于 `esdfs`, 请checkout [HMTheBoy154](https://github.com/hmtheboy154/Darkmatter-kernel) (umbral 分支) or [youling257](https://github.com/youling257/android-mainline) (5.18 以上的分支). `esdfs`和`pkglist`来自ChromiumOS的第三方内核仓库。
+        ~~对于 `esdfs`, 请checkout [HMTheBoy154](https://github.com/hmtheboy154/Darkmatter-kernel) (umbral 分支) or [youling257](https://github.com/youling257/android-mainline) (5.18 以上的分支). `esdfs`和`pkglist`来自ChromiumOS的第三方内核仓库。~~
         
-    * 转到device/generic/common并revert[此提交](https://github.com/supremegamers/device_generic_common/commit/ff34d6d549f026156188cf1467f26628e5cac658)
+    ~~* 转到device/generic/common并revert[此提交](https://github.com/supremegamers/device_generic_common/commit/ff34d6d549f026156188cf1467f26628e5cac658)~~
     
-    ***(对于想使用esdfs的人来说，接下来的这些步骤是必须的, 来自 [HMTheBoy154](https://github.com/hmtheboy154/) 的建议)***
-    * 仍然在device/generic/common中，打开device.mk并添加这些行 
+    ~~***(对于想使用esdfs的人来说，接下来的这些步骤是必须的, 来自 [HMTheBoy154](https://github.com/hmtheboy154/) 的建议)***~~
+    ~~仍然在device/generic/common中，打开device.mk并添加这些行~~ 
     ```
     PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.sys.sdcardfs=false \
     persist.sys.sdcardfs=force_off
     ```
     
-    * 转到system/vold，cherry-pick[此提交](https://github.com/supremegamers/platform_system_vold/commit/17ab73250d5acee423bd98fc885f87783baf9bd7) 
+    ~~转到system/vold，cherry-pick[此提交](https://github.com/supremegamers/platform_system_vold/commit/17ab73250d5acee423bd98fc885f87783baf9bd7)~~ 
     
-    效果 : [HMTheBoy154](https://github.com/hmtheboy154) 在BlissOS 15.6 (Android 12L)上进行的测试
+    ~~效果 : [HMTheBoy154](https://github.com/hmtheboy154) 在BlissOS 15.6 (Android 12L)上进行的测试~~
     ![photo_2022-07-19_14-01-19](https://user-images.githubusercontent.com/39849246/179693211-a6a711a0-a968-418e-bfb0-aef289d34f54.jpg)
+
+***更新*** : 上述方法只修复到 "Touch to Start"屏幕，之后程序仍然会崩溃，这是另一个问题。
 
 #### 10、Credits
 
