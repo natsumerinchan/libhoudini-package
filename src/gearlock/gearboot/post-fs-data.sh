@@ -25,9 +25,14 @@ ro.zygote zygote64_32
 "
 
 # Now call the var over gearprop with quotes
+libhoudini_setprop() {
+    echo "$ARM_TRANSLATION"
+    which gearprop
+    gearprop "$ARM_TRANSLATION"
+}
 
 test -d /data/adb/libhoudini || mkdir /data/adb/libhoudini
 test -e /data/adb/libhoudini/libhoudini_old.log && rm /data/adb/libhoudini/libhoudini_old.log
 test -e /data/adb/libhoudini/libhoudini.log && mv /data/adb/libhoudini/libhoudini.log /data/adb/libhoudini/libhoudini_old.log
-which gearprop > /data/adb/libhoudini/libhoudini.log
-gearprop "$ARM_TRANSLATION" >> /data/adb/libhoudini/libhoudini.log
+
+libhoudini_setprop 2>&1 | tee /data/adb/libhoudini/libhoudini.log
