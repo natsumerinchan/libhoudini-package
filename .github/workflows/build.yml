@@ -19,7 +19,7 @@ on:
         RELEASE_CONFIG:
           description: 'Upload to Releases'
           required: true
-          default: "false"
+          default: false
           type: boolean
 
 jobs:
